@@ -1,0 +1,145 @@
+$panel-height: 900px;
+
+.content {
+
+    &::after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    &__info-panel {
+        padding-top: 25rem;
+        background-color: aquamarine;
+        width: 20%;
+        height: $panel-height;
+        float: left;
+        position: relative;
+    }
+    
+    &__cityheading-container {
+        z-index: 1;
+        position: relative;
+    }
+
+    &__cityheading {
+        font-size: 8rem;
+        font-family: "JosefinBold";
+        text-transform: uppercase;
+        color: $theme-green;
+        letter-spacing: 1.2rem;
+    }
+
+    &__state-container {
+        display: flex;
+    }
+
+    &__stateheading {
+        font-family: "JosefinSemi";
+        font-size: 4rem;
+        
+    }
+
+    &__stateheading-decoration {
+        flex-grow: 2;
+        height: .6rem;
+        background-color: black;
+        align-self: center;
+        margin-right: 15rem;
+        margin-left: 1rem;
+        letter-spacing: $letter-spacing;
+        
+    }
+
+    &__main-heading {
+
+    }
+
+    &__info-container {
+        position: relative; 
+        margin-top: 2rem;
+    }
+
+    &__australia-image {
+    }
+
+    &__info-details-container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+    }
+
+    &__info-paragraph {
+        margin-bottom: 1rem;
+
+    }
+
+    &__info-header {
+        font-size: 2rem;
+        font-family: "JosefinSemi";
+    }
+
+    &__info-value {
+        font-size: 1.5rem;
+        font-family: "JosefinLight";
+    }
+
+    &__navigate-container {
+        display: flex;
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+    }
+
+    &__navigation-button {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__previous-button {
+        background-color: $theme-gold;
+        margin-right: $small-gutter;
+    }
+
+    &__next-button {
+        background-color: $theme-green;
+    }
+
+    &__navigation-image {
+        width: .7rem;
+        height: auto;
+        align-self: center;
+    }
+
+    &__image-container {
+        background-color: khaki;
+        width: 80%;
+        height: $panel-height;
+        float: left;
+        background-image: url("../img/melbourne-bridge.jpg");
+        position: relative;
+    }
+
+    &__image-title {
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+        background-color: $theme-gold;
+        padding: 2rem 8rem 2rem 2rem;
+        transform: translateY(50%);
+        
+    }
+
+    &__image-title-span {
+        font-family: "JosefinSemi";
+        text-transform: uppercase;
+        font-size: $menu-item-fontsize;
+        letter-spacing: $letter-spacing;
+    }
+
+
+
+}

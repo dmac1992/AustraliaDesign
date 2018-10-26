@@ -1,0 +1,26 @@
+//resets go here
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html { 
+    font-size: 62.5%; //ensures 1 rem = to 10px
+    height: 100%;
+}
+
+body {
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Josefin";
+}
+
+ul, li {
+    list-style: none;
+}

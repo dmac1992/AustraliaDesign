@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color:red;
+    margin-bottom: $container-top-gutters;
+
+    &__logo-container {
+        color: $theme-gray;
+        margin-right: $big-gutter;
+        
+    }
+
+    &__logotext {
+        font-family: "JosefinLight";
+        font-weight: 100;
+        font-size: $logo-text-size;
+        letter-spacing: $letter-spacing;
+        &--bold {
+            font-family: "JosefinBold";
+            font-weight: 900;
+            color: black;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 2;
+        align-self: center;
+        
+    }
+    &__menu-item {
+        color: black;
+        font-size: $menu-item-fontsize;
+        font-family: "JosefinLight";
+        margin-right: $small-gutter;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing;
+    }
+
+    &__social {
+        display: flex;  
+        align-self: center;
+    }
+
+    &__social-item {
+        font-size: 2.3rem;
+        margin-right: $small-gutter;
+        display: inline-block;
+    }
+
+    &__social-item:last-of-type {
+        margin-right: 0;
+    }
+
+    
+}
