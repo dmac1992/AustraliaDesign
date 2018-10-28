@@ -1,7 +1,7 @@
 .header {
     display: flex;
     flex-direction: row;
-    background-color:red;
+    // background-color:red;
     margin-bottom: $container-top-gutters;
 
     &__logo-container {
@@ -36,6 +36,10 @@
         margin-right: $small-gutter;
         text-transform: uppercase;
         letter-spacing: $letter-spacing;
+    }
+
+    &__menu-item-hyperlink {
+        cursor: pointer;
     }
 
     &__social {

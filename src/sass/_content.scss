@@ -1,7 +1,6 @@
 $panel-height: 900px;
 
 .content {
-
     &::after {
         display: table;
         content: "";
@@ -10,7 +9,7 @@ $panel-height: 900px;
 
     &__info-panel {
         padding-top: 25rem;
-        background-color: aquamarine;
+        // background-color: aquamarine;
         width: 20%;
         height: $panel-height;
         float: left;
@@ -20,6 +19,13 @@ $panel-height: 900px;
     &__cityheading-container {
         z-index: 1;
         position: relative;
+        transform: translateY(0);
+    }
+
+    &__cityheading-wrapper {
+        overflow: hidden;
+        //duno about hard coded here. Wont matter cos scrolling disabled essentially??
+        width: 1000px;
     }
 
     &__cityheading {
@@ -28,6 +34,7 @@ $panel-height: 900px;
         text-transform: uppercase;
         color: $theme-green;
         letter-spacing: 1.2rem;
+        animation-fill-mode: forwards;
     }
 
     &__state-container {
@@ -37,18 +44,19 @@ $panel-height: 900px;
     &__stateheading {
         font-family: "JosefinSemi";
         font-size: 4rem;
+        animation-fill-mode: forwards;
         
     }
 
     &__stateheading-decoration {
-        flex-grow: 2;
+        width: 80%;
         height: .6rem;
         background-color: black;
         align-self: center;
         margin-right: 15rem;
         margin-left: 1rem;
         letter-spacing: $letter-spacing;
-        
+        animation-fill-mode: forwards;
     }
 
     &__main-heading {
@@ -63,11 +71,12 @@ $panel-height: 900px;
     &__australia-image {
     }
 
+
     &__info-details-container {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-
+        animation-fill-mode: forwards;
     }
 
     &__info-paragraph {
@@ -97,15 +106,28 @@ $panel-height: 900px;
         height: 2.5rem;
         display: flex;
         justify-content: center;
+        outline-width: 2px;
+        outline-color: transparent;
+        outline-style: solid;
+        transition: 0.2s all ease;
+
+        
+        
     }
 
     &__previous-button {
         background-color: $theme-gold;
         margin-right: $small-gutter;
+        &:hover {
+            animation: navigationOutlineFade-previous .5s ease 0s;
+        }
     }
 
     &__next-button {
         background-color: $theme-green;
+        &:hover {
+            animation: navigationOutlineFade-next .5s ease 0s;
+        }
     }
 
     &__navigation-image {
@@ -119,8 +141,9 @@ $panel-height: 900px;
         width: 80%;
         height: $panel-height;
         float: left;
-        background-image: url("../img/melbourne-bridge.jpg");
+        background-image: url("../img/flinders.jpg");
         position: relative;
+        animation-fill-mode: forwards;
     }
 
     &__image-title {
@@ -139,7 +162,5 @@ $panel-height: 900px;
         font-size: $menu-item-fontsize;
         letter-spacing: $letter-spacing;
     }
-
-
 
 }

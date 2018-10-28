@@ -1,0 +1,244 @@
+//*** ***//
+@keyframes basic-scrollup-outofview {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(110%);
+  }
+}
+
+@keyframes basic-scrolldown-outofview {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-110%);
+  }
+}
+
+@keyframes revert-basic-scrolldown-outofview {
+  0% {
+    transform: translateY
+  }
+}
+
+
+//***navigation button animations***//
+@keyframes navigationOutlineFade-previous {
+
+  0% {
+    outline-color: $theme-gold;
+  }
+
+  100% {
+    outline-offset: 1rem;
+  }
+
+}
+
+@keyframes navigationOutlineFade-next {
+
+  0% {
+    outline-color: $theme-green;
+  }
+
+  100% {
+    outline-offset: 1rem;
+  }
+  
+}
+
+//***city heading animations***//
+@keyframes scroll-down-cityheading {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(110%);
+  }
+}
+
+@keyframes scroll-up-cityheading {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-110%);
+  }
+}
+
+
+//*** state animations ***//
+@keyframes scroll-down-state {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(1500px);
+  }
+}
+
+@keyframes scroll-up-state {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-1500px);
+  }
+}
+
+
+//*** details animations ***//
+@keyframes scroll-down-details {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(1500px);
+  }
+}
+
+@keyframes scroll-up-details {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(-1500px);
+  }
+}
+
+//*** photo animations ***//
+@keyframes scroll-down-photo {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(1500px);
+  }
+}
+
+@keyframes scroll-up-photo {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-1500px);
+  }
+}
+
+@keyframes shrink-state-decoration {
+  0% {
+    width: 80%;
+  }
+
+  100% {
+    width: 0%;
+  }
+
+}
+
+@keyframes grow-state-decoration {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes new-current-state {
+  0% {
+    fill: $theme-green;
+  }
+
+
+  100% {
+    fill: #999;
+  }
+}
+
+@keyframes old-current-state {
+
+  0% {
+    fill: #999;
+  }
+
+  100% {
+    fill: $theme-green;
+  }
+
+}
+
+
+
+//////////////////////////////////////////////////////////////
+
+  // ***classes to apply animations***//
+
+  .scroll-down-cityheading {
+    animation: scroll-down-cityheading 1s;
+  }
+
+  .scroll-up-cityheading {
+    animation: scroll-up-cityheading 1s;
+  }
+
+  .scroll-down-state {
+    animation: scroll-down-state 3s;
+  }
+  .scroll-up-state {
+    animation: scroll-up-state 3s;
+  }
+
+  .scroll-up-details {
+    animation: scroll-up-details 3s;
+  }
+
+  .scroll-down-details {
+    animation: scroll-down-details 3s;
+  }
+
+  .scroll-up-photo {
+    animation: scroll-up-photo 1s;
+    animation-timing-function: cubic-bezier(.99, .02, .7, .27);
+
+  }
+
+  .scroll-down-photo {
+    animation: scroll-down-photo 1s;
+    animation-timing-function: cubic-bezier(.99, .02, .7, .27);
+  }
+
+  .shrink-state-decoration {
+    animation: shrink-state-decoration 1s;
+  }
+
+  .grow-state-decoration {
+    animation: grow-state-decoration 1s;
+  }
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
