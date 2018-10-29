@@ -3,7 +3,16 @@
 @import "variables";
 @import "layout";
 @import "fonts";
-@import "animations";
+
+
+@import "./animations/city-title-animations";
+@import "./animations/details-box-animations";
+@import "./animations/state-title-animations";
+@import "./animations/state-decoration-animations";
+@import "./animations/photo-animations";
+
+
+
 @import "social-fonts";
 @import "header";
 @import "content";

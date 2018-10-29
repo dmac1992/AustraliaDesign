@@ -1,0 +1,24 @@
+//***navigation button animations***//
+@keyframes navigationOutlineFade-previous {
+
+    0% {
+      outline-color: $theme-gold;
+    }
+  
+    100% {
+      outline-offset: 1rem;
+    }
+  
+  }
+  
+  @keyframes navigationOutlineFade-next {
+  
+    0% {
+      outline-color: $theme-green;
+    }
+  
+    100% {
+      outline-offset: 1rem;
+    }
+    
+  }

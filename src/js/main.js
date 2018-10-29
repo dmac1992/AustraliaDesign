@@ -50,39 +50,120 @@ const nextTransition = (locations) => {
 
 }
 
-
 const transitionLandmark = () => {
 
 
-
-
 }
-
 
 const transitionCity = () => {
 
+    //random int for top right bot left
+
 
 
 
 }
 
-
-
-
-const city_transition_moveUp() => {
+const transition_out_move_up = () => {
     city.classList.add('scroll-up-cityheading');
     state.classList.add('scroll-up-state');
     details_container.classList.add('scroll-up-details');
     photo.classList.add('scroll-up-photo');
     state_bar_decoration.classList.add('shrink-state-decoration');
 }
-
-
-const city_transition_moveDown() => {
-
+const transition_out_move_down = () => {
+    city.classList.add('scroll-down-cityheading');
+    state.classList.add('scroll-down-state');
+    details_container.classList.add('scroll-down-details');
+    photo.classList.add('scroll-down-photo');
+    state_bar_decoration.classList.add('shrink-state-decoration');
+}
+const transition_out_move_left = () => {
+    city.classList.add('scroll-left-cityheading');
+    state.classList.add('scroll-left-state');
+    details_container.classList.add('scroll-left-details');
+    photo.classList.add('scroll-left-photo');
+    state_bar_decoration.classList.add('shrink-state-decoration');
+}
+const transition_out_move_right = () => {
+    city.classList.add('scroll-right-cityheading');
+    state.classList.add('scroll-right-state');
+    details_container.classList.add('scroll-right-details');
+    photo.classList.add('scroll-right-photo');
+    state_bar_decoration.classList.add('shrink-state-decoration');
 }
 
-setTimeout(ity_transition_moveUp, 2000);
+
+//reposition methods once off page, dont need to change city i think
+//after applying inline styles remove old classes
+
+const reposition_offscreen_top = () => {
+    photo.classList.add("reposition-photo-top");
+    details_container.classList.add("reposition-details-top");
+    state.classList.add("reposition-state-top");
+    city.classList.add('reposition-cityheading-top');
+}
+
+const reposition_offscren_right = () => {
+    photo.classList.add("reposition-photo-right");
+    details_container.classList.add("reposition-details-right");
+    state.classList.add("reposition-state-right");
+}
+
+const reposition_offscreen_bottom = () => {
+    photo.classList.add("reposition-photo-bottom");
+    details_container.classList.add("reposition-details-bottom");
+    state.classList.add("reposition-state-bottom");
+    city.classList.add('reposition-cityheading-bottom')
+}
+
+const reposition_offscreen_left = () => {
+    photo.classList.add("reposition-photo-left");
+    details_container.classList.add("reposition-details-left");
+    state.classList.add("reposition-state-left");
+}
+
+
+//move in animations
+const move_in_top = () => {
+    photo.classList.add('move-in-photo-top');
+    details_container.classList.add('move-in-details-top');
+    state.classList.add('move-in-state-top');
+}
+
+const move_in_right = () => {
+    photo.classList.add('move-in-photo-right');
+    details_container.classList.add('move-in-details-right');
+    state.classList.add('move-in-state-right');
+}
+
+const move_in_bottom = () => {
+    photo.classList.add('move-in-photo-bottom');
+    details_container.classList.add('move-in-details-bottom');
+    state.classList.add('move-in-state-bottom');
+    city.classList.add('move-in-cityheading');
+}
+
+const move_in_left = () => {
+    photo.classList.add('move-in-photo-left');
+    details_container.classList.add('move-in-details-left');
+    state.classList.add('move-in-state-left');
+}
+
+
+
+//remove current animation
+
+
+//transition location
+
+
+setTimeout(transition_out_move_up, 2000);
+
+setTimeout(reposition_offscreen_bottom, 4000);
+
+setTimeout(move_in_bottom, 6000);
+// setTimeout()
 //change values
 
 

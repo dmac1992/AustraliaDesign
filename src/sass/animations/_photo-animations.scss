@@ -1,0 +1,168 @@
+@keyframes scroll-down-photo {
+    0% {
+      transform: translateY(0);
+    }
+  
+    100% {
+      transform: translateY(1500px);
+    }
+  }
+  
+  @keyframes scroll-up-photo {
+    0% {
+      transform: translateY(0);
+    }
+  
+    100% {
+      transform: translateY(-1500px);
+    }
+  }
+  
+  @keyframes scroll-left-photo {
+    0% {
+      transform: translateX(0);
+    }
+  
+    100% {
+      transform: translateX(-1500px)
+    }
+  }
+  
+  @keyframes scroll-right-photo {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(2000px);
+    }
+  }
+  
+
+@keyframes reposition-photo-top {
+    0% {
+      transform: translateX(0) translateY(-1500px)
+    }
+    100% {
+      transform: translateX(0) translateY(-1500px)
+    }
+  }
+  
+  @keyframes move-in-photo-top {
+    0% {
+        transform: translateX(0) translateY(-1500px)
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+  }
+  
+  @keyframes reposition-photo-right {
+    0% {
+      transform: translateX(-1500px) translateY(0);
+    }
+    100% {
+      transform: translateX(-1500px) translateY(0);
+    }
+  }
+  
+  @keyframes move-in-photo-right {
+    0% {
+        transform: translateX(-1500px) translateY(0);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+  
+  
+  @keyframes reposition-photo-bottom {
+    0% {
+      transform: translateX(0) translateY(1500px);
+    }
+    100% {
+      transform: translateX(0) translateY(1500px);
+    }
+  }
+  
+  @keyframes move-in-photo-bottom {
+    0% {
+      transform: translateX(0) translateY(1500px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+  
+  @keyframes reposition-photo-left {
+    0% {
+      transform: translateX(-1500px) translateY(0);
+    }
+    100% {
+      transform: translateX(-1500px) translateY(0);
+    }
+  }
+  
+  @keyframes move-in-photo-left {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  //photo animation classes
+  .scroll-up-photo {
+    animation: scroll-up-photo 1s;
+    animation-timing-function: cubic-bezier(.99, .02, .7, .27);
+
+  }
+
+
+  .scroll-right-photo {
+    animation: scroll-right-photo 1s;
+    animation-timing-function: cubic-bezier(.99, .02, .7, .27);
+  }
+
+  .scroll-down-photo {
+    animation: scroll-down-photo 1s;
+    animation-timing-function: cubic-bezier(.99, .02, .7, .27);
+  }
+
+  .scroll-left-photo {
+    animation: scroll-left-photo 1s;
+    animation-timing-function: cubic-bezier(.99, .02, .7, .27);
+  }
+
+  
+  .reposition-photo-top {
+    animation: reposition-photo-top 0s;
+  }
+
+  .reposition-photo-right {
+    animation: reposition-photo-right 0s;
+  }
+
+  .reposition-photo-bottom {
+    animation: reposition-photo-bottom 0s;
+  }
+
+  .reposition-photo-left {
+    animation: reposition-photo-left 0s;
+  }
+
+  .move-in-photo-top {
+    animation: move-in-photo-top 1s;
+  }
+
+  .move-in-photo-right {
+    animation: move-in-photo-right 1s;
+  }
+
+  .move-in-photo-left {
+    animation: move-in-photo-left 1s;
+  }
+  //move in classes
+  .move-in-photo-bottom {
+    animation: move-in-photo-bottom 1s;
+  }
