@@ -45,12 +45,12 @@ $panel-height: 900px;
         font-family: "JosefinSemi";
         font-size: 4rem;
         animation-fill-mode: forwards;
-        
+        text-transform: lowercase;
     }
 
     &__stateheading-decoration {
         width: 80%;
-        height: .6rem;
+        height: 3px;
         background-color: black;
         align-self: center;
         margin-right: 15rem;
@@ -110,9 +110,6 @@ $panel-height: 900px;
         outline-color: transparent;
         outline-style: solid;
         transition: 0.2s all ease;
-
-        
-        
     }
 
     &__previous-button {

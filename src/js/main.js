@@ -1,5 +1,6 @@
 import "../sass/main.scss";
 
+
 import { locations } from './locations_struct';
 
 //animate for moving
@@ -29,25 +30,22 @@ let states = [nsw, vic, sa, qld, tas, nt, wa];
 let currentCity = 0;
 let currentLandmark = 0;
 
-// city.classList.add('scroll-down-cityheading');
-// state.classList.add('scroll-down-state');
 
-
-
-const nextTransition = (locations) => {
-
+const nextTransition = () => {
+    debugger;
     if (currentLandmark < locations[currentCity].length) {
-        currentLandmark++;
         transitionLandmark();
-    } else {
-        if (currentLocation < locations.length) {
-            currentLocation++;
+        currentLandmark++;
+    } 
+    else {
+        if (currentCity < locations.length) {
+            currentCity++;
         } else {
-            currentLocation = 0;
+            currentCity = 0;
         }
+        currentLandmark = 0;
         transitionCity();
     }
-
 }
 
 const transitionLandmark = () => {
@@ -58,11 +56,29 @@ const transitionLandmark = () => {
 const transitionCity = () => {
 
     //random int for top right bot left
+    let direction = Math.floor((Math.random() * 4) + 1);
 
+    transition_out_move_up();
 
-
+    // switch(direction) {
+    //     case 0:
+    //         transition_out_move_up();
+    //         break;
+    //     case 1: 
+    //         transition_out_move_up();
+    //         break;
+    //     case 2:
+    //         transition_out_move_up();
+    //         break;
+    //     case 3:
+    //         transition_out_move_down();   
+    //         break;
+    // }
 
 }
+
+const update_location_details_delay = 2500;
+const move_in_delay = 3000;
 
 const transition_out_move_up = () => {
     city.classList.add('scroll-up-cityheading');
@@ -70,7 +86,10 @@ const transition_out_move_up = () => {
     details_container.classList.add('scroll-up-details');
     photo.classList.add('scroll-up-photo');
     state_bar_decoration.classList.add('shrink-state-decoration');
+    setTimeout(update_location_details, 2500);
+    setTimeout(move_in_bottom, 3000);
 }
+
 const transition_out_move_down = () => {
     city.classList.add('scroll-down-cityheading');
     state.classList.add('scroll-down-state');
@@ -129,62 +148,34 @@ const move_in_top = () => {
     photo.classList.add('move-in-photo-top');
     details_container.classList.add('move-in-details-top');
     state.classList.add('move-in-state-top');
+    state_bar_decoration.classList.add('grow-state-decoration');
 }
 
 const move_in_right = () => {
     photo.classList.add('move-in-photo-right');
     details_container.classList.add('move-in-details-right');
     state.classList.add('move-in-state-right');
+    state_bar_decoration.classList.add('grow-state-decoration');
 }
 
 const move_in_bottom = () => {
     photo.classList.add('move-in-photo-bottom');
     details_container.classList.add('move-in-details-bottom');
     state.classList.add('move-in-state-bottom');
-    city.classList.add('move-in-cityheading');
+    city.classList.add('move-in-cityheading-bottom');
+    state_bar_decoration.classList.add('grow-state-decoration');
 }
 
 const move_in_left = () => {
     photo.classList.add('move-in-photo-left');
     details_container.classList.add('move-in-details-left');
     state.classList.add('move-in-state-left');
+    state_bar_decoration.classList.add('grow-state-decoration');
 }
 
 
 
-//remove current animation
 
-
-//transition location
-
-
-setTimeout(transition_out_move_up, 2000);
-
-setTimeout(reposition_offscreen_bottom, 4000);
-
-setTimeout(move_in_bottom, 6000);
-// setTimeout()
-//change values
-
-
-//move back
-
-// //on timer call "next" method.
-
-// //have previous method as well
-
-
-// function move(location, landmark){
-
-//     let direction = Math.floor((Math.random() * 4) + 1); // 0 - up, 1 - right, 2 - down, 3 - left
-
-//     photo.st
-
-// };
-
-
-
-// function
 
 let changeState = (state) => {
 
@@ -221,3 +212,22 @@ let changeState = (state) => {
 
 
 
+//change values 
+const update_location_details = () => {
+    //snapshot pointer to the current city for clarification
+    let current_city = locations[currentCity];
+    debugger;
+    photo.style.backgroundImage = `url('../img/${current_city.landmarks[currentLandmark].image}')`;
+    photo_title.innerHTML = current_city.landmarks[currentLandmark].name;
+    city.innerHTML = current_city.city;
+    state.innerHTML = current_city.state;
+    details_population.innerHTML = current_city.population;
+    details_elevation.innerHTML = current_city.elevation;
+    details_area.innerHTML = current_city.area;
+}
+
+
+
+// INVOKE LOOP
+
+setTimeout(nextTransition, 2000);
