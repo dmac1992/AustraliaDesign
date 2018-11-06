@@ -11,7 +11,7 @@ export const locations = [
                 "name": "flinders"
             },
             {
-                "image": "fedquare.jpg",
+                "image": "fedsquare.jpg",
                 "name": "federation square"
             },
             {

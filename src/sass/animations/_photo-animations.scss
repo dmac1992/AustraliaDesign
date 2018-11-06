@@ -111,6 +111,46 @@
     }
   }
 
+  @keyframes fade-out-photo-title {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0
+    }
+  }
+
+  @keyframes fade-in-photo-title {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes move-current-photo-right {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes move-new-photo-right {
+    0% {
+      transform: translate(-100%)
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
   //photo animation classes
   .scroll-up-photo {
     animation: scroll-up-photo 1s;
@@ -166,3 +206,29 @@
   .move-in-photo-bottom {
     animation: move-in-photo-bottom 1s;
   }
+
+  .fade-out-photo-title {
+    animation: fade-out-photo-title .25s;
+  }
+
+  .fade-in-photo-title {
+    animation: fade-in-photo-title .25s;
+  }
+
+  .move-current-photo-right {
+    animation: move-current-photo-right 1.2s;
+  }
+
+  .move-new-photo-right {
+    animation: move-new-photo-right 1.2s;
+  }
+
+
+
+
+
+
+
+  
+
+ 

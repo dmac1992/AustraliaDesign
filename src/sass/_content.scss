@@ -69,6 +69,7 @@ $panel-height: 900px;
     }
 
     &__australia-image {
+
     }
 
 
@@ -134,13 +135,30 @@ $panel-height: 900px;
     }
 
     &__image-container {
-        background-color: khaki;
         width: 80%;
         height: $panel-height;
         float: left;
-        background-image: url("../img/flinders.jpg");
         position: relative;
         animation-fill-mode: forwards;
+    }
+
+    &__landmark-image {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-image: url("../img/flinders.jpg");
+        animation-fill-mode: forwards;
+    }
+
+    &__next-image {
+        transform: translateX(-100%);
+    }
+
+    &__overflow-hidden-fix{
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
     }
 
     &__image-title {
@@ -150,7 +168,7 @@ $panel-height: 900px;
         background-color: $theme-gold;
         padding: 2rem 8rem 2rem 2rem;
         transform: translateY(50%);
-        
+        transition: width .4s;
     }
 
     &__image-title-span {
@@ -158,6 +176,11 @@ $panel-height: 900px;
         text-transform: uppercase;
         font-size: $menu-item-fontsize;
         letter-spacing: $letter-spacing;
+        animation-fill-mode: forwards;
+        opacity: 1;
     }
 
 }
+
+
+
