@@ -147,10 +147,9 @@ $panel-height: 900px;
         width: 100%;
         position: absolute;
         background-image: url("../img/flinders.jpg");
-        animation-fill-mode: forwards;
     }
 
-    &__next-image {
+    &__landmark-image--new {
         transform: translateX(-100%);
     }
 
@@ -178,6 +177,7 @@ $panel-height: 900px;
         letter-spacing: $letter-spacing;
         animation-fill-mode: forwards;
         opacity: 1;
+        white-space: nowrap;
     }
 
 }
