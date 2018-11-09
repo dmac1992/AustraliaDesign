@@ -108,30 +108,26 @@ $panel-height: 900px;
         display: flex;
         justify-content: center;
         outline-width: 2px;
-        // outline-color: transparent;
         outline-style: solid;
-        transition: 0.2s all ease;
+       
     }
 
     &__previous-button {
         background-color: $theme-gold;
         margin-right: $small-gutter;
-
+        outline-color: $theme-gold;
         &:hover {
             animation: navigation-outline-fade-previous;
-            // animation-duration: 2s;
-            outline-color: black;
+            animation-duration: .3s;
         }
     }
 
     &__next-button {
         background-color: $theme-green;
+        outline-color: $theme-green;
         &:hover {
             animation: navigation-outline-fade-next;
-            // animation-duration: 2s;
-            // outline-color: $theme-green;
-            outline-color: black;
-           
+            animation-duration: .3s;
         }
     }
 

@@ -2,22 +2,8 @@ import "../sass/main.scss";
 import { locations } from './locations_struct';
 require('velocity-animate');
 
-//animate for moving
-// let photo = document.querySelector('.content__image-container');
-// let photo_title_container = document.querySelector('.content__image-title');
-// let photo_title = document.querySelector('.content__image-title-span');
 
-
-// let city = document.querySelector('.content__cityheading');
-// let state = document.querySelector('.content__stateheading');
-// let state_bar_decoration = document.querySelector('.content__stateheading-decoration');
-
-// let details_container = document.querySelector('.content__info-details-container');
-// let details_population = document.querySelector('#content__population-value');
-// let details_elevation = document.querySelector('#content__elevation-value');
-// let details_area = document.querySelector('#content__area-value');
-
-//states
+//capture states
 let nsw = document.querySelector('#AU-NSW');
 let vic = document.querySelector('#AU-VIC');
 let sa = document.querySelector('#AU-SA');
@@ -25,8 +11,6 @@ let qld = document.querySelector('#AU-QLD');
 let tas = document.querySelector('#AU-TAS');
 let nt = document.querySelector('#AU-NT');
 let wa = document.querySelector('#AU-WA');
-
-// let states = [nsw, vic, sa, qld, tas, nt, wa];
 
 let currentCity = 0;
 let currentLandmark = 1;
