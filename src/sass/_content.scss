@@ -108,7 +108,7 @@ $panel-height: 900px;
         display: flex;
         justify-content: center;
         outline-width: 2px;
-        outline-color: transparent;
+        // outline-color: transparent;
         outline-style: solid;
         transition: 0.2s all ease;
     }
@@ -116,15 +116,22 @@ $panel-height: 900px;
     &__previous-button {
         background-color: $theme-gold;
         margin-right: $small-gutter;
+
         &:hover {
-            animation: navigationOutlineFade-previous .5s ease 0s;
+            animation: navigation-outline-fade-previous;
+            // animation-duration: 2s;
+            outline-color: black;
         }
     }
 
     &__next-button {
         background-color: $theme-green;
         &:hover {
-            animation: navigationOutlineFade-next .5s ease 0s;
+            animation: navigation-outline-fade-next;
+            // animation-duration: 2s;
+            // outline-color: $theme-green;
+            outline-color: black;
+           
         }
     }
 
