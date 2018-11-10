@@ -3,6 +3,8 @@ import { locations } from './locations_struct';
 require('velocity-animate');
 
 
+let startTime = Date.now();
+
 //capture states
 let nsw = document.querySelector('#AU-NSW');
 let vic = document.querySelector('#AU-VIC');
@@ -248,8 +250,34 @@ const update_location_details = () => {
     details_area.innerHTML = current_city.area;
 }
 
+window.onload = function() {
+
+    //in milliseconds, avoids flashing load screen
+    let pageLoadedTime = Date.now() - startTime;
+    
+    if (pageLoadedTime < 3000) {
+        setTimeout(website_boot, 2000);
+    } else {
+        website_boot();
+    }
+
+    
+
+    
+}
+
+const website_boot = () => {
+    let load_screen_div = document.querySelector(".loadscreen");
+    Velocity(load_screen_div, {opacity: 0}, {
+        duration: 1000,
+        complete: function() {
+            document.body.removeChild(load_screen_div);
+            setInterval(nextTransition, 5000);
+        }
+    })
+}
 // INVOKE LOOP
-setInterval(nextTransition, 5000);
+// setInterval(nextTransition, 5000);
 
 // transitionCity();
 

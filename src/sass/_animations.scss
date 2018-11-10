@@ -1,62 +1,16 @@
+@keyframes kangaroo-loading-animation {
 
+  0% {
+    transform: translateY(0) rotate(0);
+  }
 
+  50% {
+    transform: translateY(-50px) rotate(5deg);
+  }
 
-////////////////////////////
-//*** photo animations ***//
-////////////////////////////
-
-
-
-
-
-//reposition and move in animations for photo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////
-
-  // ***classes to apply animations***//
-
+  100% {
+    transform: translateY(0) rotate(0);
+  }
   
+}
 
-  
-
-
-
-
-  
-
- 
-
- 
-
- 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
