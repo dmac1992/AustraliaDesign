@@ -70,16 +70,23 @@ $panel-height: 85vh;
         margin-top: 2rem;
     }
 
+    &__info-container--side-menu {
+        height: 100%;
+    }
+
     &__australia-image {
 
     }
-
 
     &__info-details-container {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         animation-fill-mode: forwards;
+    }
+
+    &__info-details-container--side {
+        left: 15%;
     }
 
     &__info-paragraph {
@@ -192,10 +199,19 @@ $panel-height: 85vh;
         transform: translateY(-50%) translateX(50%);
         top: 50%;
         right: 0;
-        background-color: #999999;
+        background-color: $theme-green;
+        height: 5rem;
+        width: 5rem;
+        transition: .3s;
     }
 
-   
+    &__side-menu--shrunk:hover {
+        height: 7rem;
+        width: 7rem;
+        cursor: pointer;
+    }
+
+    
 
 }
 

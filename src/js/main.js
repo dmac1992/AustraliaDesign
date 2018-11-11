@@ -272,9 +272,12 @@ function restructure_dom()  {
     let info_container = document.querySelector('.content__info-container');
     let info_panel = document.querySelector('.content__info-panel')
     let panel_container = document.querySelector('.content');
+    let details_container = document.querySelector('.content__info-details-container');
     let container = document.querySelector('.container');
     //layout parents involved
     let image_container = document.querySelector('.content__image-container');
+    let australia_svg = document.querySelector('.svg-australia');
+
     
     //if resized to mobile like dimensions
     if (window.innerWidth < 1150) {
@@ -297,10 +300,17 @@ function restructure_dom()  {
             //create menu right and assign appropriate class
             let mobile_circle_menu = document.createElement("div");
             mobile_circle_menu.classList.add("content__side-menu");
+            mobile_circle_menu.classList.add("content__side-menu--shrunk");
+            mobile_circle_menu.addEventListener("click", side_menu_handler);
 
             //append info container (australis svg and statistics to newly created menu). 
             //also set info_container opacity to zero, fades in as circle menu grows
             mobile_circle_menu.appendChild(info_container);
+            info_container.classList.add("content__info-container--side-menu");
+            details_container.classList.add("content__info-details-container--side");
+
+            // add class to svg australia to to work with side menu
+            australia_svg.classList.add("svg-australia--side");
             
             info_container.style.opacity = 0;
             info_container.style.transform = "scale(0)";
@@ -329,10 +339,15 @@ function restructure_dom()  {
             container.removeChild(makeshift_mobile_header);
 
             //append side panel info container to left panel
-            let muh_info_container = document.querySelector(".content__info-container");
-            info_panel.appendChild(muh_info_container);
+            let info_container = document.querySelector(".content__info-container");
+            info_container.classList.remove("content__info-container--side-menu");
+            info_panel.appendChild(info_container);
             info_container.style.opacity = 1;
             info_container.style.transform = "scale(1)";
+
+            //remove side menu specific class from australia svg
+            australia_svg.classList.remove("svg-australia--side");
+            details_container.classList.remove("content__info-details-container-side");
 
             //remove side menu
             let side_menu_delete = document.querySelector(".content__side-menu");
@@ -362,9 +377,38 @@ const website_boot = () => {
     //     }
     // });
 
+}
 
+function side_menu_handler() {
+
+
+
+    let side_menu = document.querySelector(".content__side-menu");
+    let info_container = document.querySelector(".content__info-container"); 
+    if (side_menu.classList.contains("content__side-menu--shrunk")) {
+        side_menu.classList.remove("content__side-menu--shrunk")
+        Velocity(side_menu, { height: "850px", width: "850px",  backgroundColor: "#fff"}, {
+            duration: 400,
+            complete: function() {
+                Velocity(info_container, { scale: 1, opacity: 1 }, {
+                    duration: 400
+                })
+            }
+        })
+    }
+    else if (!side_menu.classList.contains("content__side-menu--shrunk")) {
+        side_menu.classList.add("content__side-menu--shrunk");
+
+        Velocity(info_container, { scale: 0, opacity: 0}, {
+            duration: 400,
+            complete: function() {
+                Velocity(side_menu, { height: "70px", width: "70px", backgroundColor: "#339900" }, {
+                    duration: 400,
+                });
+            }
+        })
     
-
+    }
 }
 
 

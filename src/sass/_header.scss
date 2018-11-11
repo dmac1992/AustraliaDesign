@@ -1,7 +1,6 @@
 .header {
     display: flex;
     flex-direction: row;
-    // background-color:red;
     height: 15vh;
 
     &__logo-container {
@@ -22,7 +21,7 @@
             color: black;
         }
     }
-
+    
     &__menu {
         display: flex;
         flex-direction: row;
