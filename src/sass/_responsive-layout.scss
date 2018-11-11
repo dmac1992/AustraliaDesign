@@ -1,0 +1,97 @@
+@media (max-width: 1500px) {
+    .content__info-panel {
+        width: 30%;
+    }
+
+    .content__image-container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__social {
+        display: none;
+    }
+
+    .header__logo-container {
+        flex-grow: 1;
+    }
+
+    .header__hamburger-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .content__details-container {
+        display: none;
+    }
+
+    .content__info-panel {
+        width: 0;
+    }
+
+    .content__image-container {
+        width: 100%;
+        padding-top: 5%;
+    }
+
+    .content__image-title {
+        right: auto;
+        left: 50%;
+        bottom: 20%;
+        transform: translateX(-50%);
+    }
+
+    .content__navigate-container {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5%;
+    }
+
+    .content__cityheading-wrapper {
+        width: auto;
+    }
+
+    .content__cityheading {
+        font-size: 3rem;
+    }
+    .content__stateheading {
+        font-size: 2rem;
+    }
+
+    .content__stateheading-decoration {
+        width: 30%;
+    }
+
+    .content__mobile-heading-parent-container {
+        text-align: center;
+    }
+
+    .content__mobile-heading-container {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .container {
+        padding: 3rem 6rem;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .container {
+        padding: 2rem 4rem;
+    }
+}

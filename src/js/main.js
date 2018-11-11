@@ -260,24 +260,107 @@ window.onload = function() {
     } else {
         website_boot();
     }
-
-    
-
-    
 }
 
+// will need to run once on load as well i think
+window.addEventListener('resize', restructure_dom);
+function restructure_dom()  {
+
+    //elements subject to restructuring
+    let cityheading = document.querySelector('.content__cityheading-container');
+    let navigation_container = document.querySelector('.content__navigate-container');
+    let info_container = document.querySelector('.content__info-container');
+    let info_panel = document.querySelector('.content__info-panel')
+    let panel_container = document.querySelector('.content');
+    let container = document.querySelector('.container');
+    //layout parents involved
+    let image_container = document.querySelector('.content__image-container');
+    
+    //if resized to mobile like dimensions
+    if (window.innerWidth < 1150) {
+
+        //basic check to see if dom already set for mobile
+        if ( !document.querySelector('.content__side-menu') ) {
+
+            //create new cityheading container put it after header and before content, then append container for city/state heading 
+            let mobile_city_parent_container = document.createElement("div"); // outer container needed to inline block the inner container
+            mobile_city_parent_container.classList.add("content__mobile-heading-parent-container");
+            let mobile_city_heading_container = document.createElement("div"); // inline-block container used
+            mobile_city_heading_container.classList.add("content__mobile-heading-container");
+
+            //append inner mobile city container to parent mobile city container
+            mobile_city_parent_container.appendChild(mobile_city_heading_container);
+            
+            container.insertBefore(mobile_city_parent_container, panel_container);
+            mobile_city_heading_container.appendChild(cityheading);
+
+            //create menu right and assign appropriate class
+            let mobile_circle_menu = document.createElement("div");
+            mobile_circle_menu.classList.add("content__side-menu");
+
+            //append info container (australis svg and statistics to newly created menu). 
+            //also set info_container opacity to zero, fades in as circle menu grows
+            mobile_circle_menu.appendChild(info_container);
+            
+            info_container.style.opacity = 0;
+            info_container.style.transform = "scale(0)";
+
+            //append new menu to body (its a fixed element)
+            document.body.appendChild(mobile_circle_menu);
+
+            //grab append navigation box to photo container
+            image_container.appendChild(navigation_container);
+           
+            //create hamburger menu
+        }
+    }
+
+    //if resized to desktop like dimensions
+    if (window.innerWidth >= 1150) {
+        //basic check to see if dom already set for desktop
+        if ( document.querySelector('.content__side-menu') ) {
+
+            //fill side panel
+            //relocate side menu info panel
+            info_panel.appendChild(cityheading);
+
+            //delete makeshift mobilecityheading structure
+            let makeshift_mobile_header = document.querySelector(".content__mobile-heading-parent-container");
+            container.removeChild(makeshift_mobile_header);
+
+            //append side panel info container to left panel
+            let muh_info_container = document.querySelector(".content__info-container");
+            info_panel.appendChild(muh_info_container);
+            info_container.style.opacity = 1;
+            info_container.style.transform = "scale(1)";
+
+            //remove side menu
+            let side_menu_delete = document.querySelector(".content__side-menu");
+            document.body.removeChild(side_menu_delete);
+
+            //reposition nav arrows
+            info_panel.appendChild(navigation_container);
+        
+        }
+    }
+}
+// turn back on for production
 const website_boot = () => {
+
+    restructure_dom();
+
     let load_screen_div = document.querySelector(".loadscreen");
+
     Velocity(load_screen_div, {opacity: 0}, {
-        duration: 1000,
+        duration: 2000,
         complete: function() {
             document.body.removeChild(load_screen_div);
             setInterval(nextTransition, 5000);
         }
     })
-}
-// INVOKE LOOP
-// setInterval(nextTransition, 5000);
+    
 
-// transitionCity();
+}
+
+
 
