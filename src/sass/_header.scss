@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: row;
     // background-color:red;
-    margin-bottom: $container-top-gutters;
+    height: 15vh;
 
     &__logo-container {
         color: $theme-gray;
         margin-right: $big-gutter;
-        
+        display: flex;
+        align-self: center;
     }
 
     &__logotext {

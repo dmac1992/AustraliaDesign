@@ -1,6 +1,8 @@
-$panel-height: 80vh;
+$panel-height: 85vh;
 
 .content {
+    padding-bottom: 5rem;
+    height: 80vh;
     &::after {
         display: table;
         content: "";
@@ -11,7 +13,7 @@ $panel-height: 80vh;
         padding-top: 25rem;
         // background-color: aquamarine;
         width: 20%;
-        height: $panel-height;
+        height: 100%;
         float: left;
         position: relative;
     }
@@ -139,7 +141,7 @@ $panel-height: 80vh;
 
     &__image-container {
         width: 80%;
-        height: $panel-height;
+        height: 100%;
         float: left;
         position: relative;
         animation-fill-mode: forwards;
@@ -150,6 +152,7 @@ $panel-height: 80vh;
         width: 100%;
         position: absolute;
         background-image: url("../img/flinders.jpg");
+        background-repeat: no-repeat;
     }
 
     &__landmark-image--new {

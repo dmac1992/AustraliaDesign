@@ -349,15 +349,20 @@ const website_boot = () => {
 
     restructure_dom();
 
-    let load_screen_div = document.querySelector(".loadscreen");
 
-    Velocity(load_screen_div, {opacity: 0}, {
-        duration: 2000,
-        complete: function() {
-            document.body.removeChild(load_screen_div);
-            setInterval(nextTransition, 5000);
-        }
-    })
+    setInterval(nextTransition, 5000);
+
+    // let load_screen_div = document.querySelector(".loadscreen");
+
+    // Velocity(load_screen_div, {opacity: 0}, {
+    //     duration: 2000,
+    //     complete: function() {
+    //         document.body.removeChild(load_screen_div);
+    //         setInterval(nextTransition, 5000);
+    //     }
+    // });
+
+
     
 
 }

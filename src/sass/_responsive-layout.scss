@@ -8,6 +8,7 @@
     }
 }
 
+//first major breakpoint that coincides with restruction of dom
 @media (max-width: 1150px) {
 
     .header__menu {
@@ -27,6 +28,7 @@
         flex-direction: column;
         justify-content: space-between;
         position: relative;
+        align-self: center;
     }
 
     .content__details-container {
@@ -39,7 +41,7 @@
 
     .content__image-container {
         width: 100%;
-        padding-top: 5%;
+        // padding-top: 5%;
     }
 
     .content__image-title {
@@ -60,10 +62,10 @@
     }
 
     .content__cityheading {
-        font-size: 3rem;
+        font-size: 4.5rem;
     }
     .content__stateheading {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .content__stateheading-decoration {
@@ -80,15 +82,46 @@
         margin-right: auto;
     }
 
+    .header {
+        height: 10vh;
+    }
+
+    .content {
+        height: 80vh;
+    }
+
+    .content__mobile-heading-container {
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content__cityheading-container {
+        align-self: center;
+    }
+
 }
 
 @media (max-width: 750px) {
 
-    .container {
-        padding: 3rem 6rem;
+    // .container {
+    //     padding: 3rem 6rem;
+    // }
+
+    .content__cityheading {
+        font-size: 3rem;
+    }
+    .content__stateheading {
+        font-size: 2rem;
+    }
+
+    .content__image-title-span {
+        font-size: 1rem;
     }
 
 }
+
+
 
 @media (max-width: 450px) {
     .container {
