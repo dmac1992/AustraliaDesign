@@ -411,5 +411,35 @@ function side_menu_handler() {
     }
 }
 
+// hamburger handler
+let mobile_menu = document.querySelector(".mobile-menu");
+let hamburger_checkbox = document.querySelector("#menu-checkbox");
+let mobile_menu_ul = document.querySelector(".mobile-menu__menu");
 
+hamburger_checkbox.addEventListener("change", toggle_mobile_menu);
 
+function toggle_mobile_menu() {
+    if (hamburger_checkbox.checked) {
+        mobile_menu.style.zIndex = 10000;
+        Velocity(mobile_menu, {opacity: 1}, {
+            duration: 300,
+            complete: function() {
+                Velocity(mobile_menu_ul, {opacity: 1}, {
+                    duration: 300
+                });
+            }
+        });
+    } else {
+        Velocity(mobile_menu_ul, {opacity: 0}, {
+            duration: 300,
+            complete: function() {
+                Velocity(mobile_menu, {opacity: 0}, {
+                    duration: 300,
+                    complete: function(){
+                        mobile_menu.style.zIndex = 0;
+                    }
+                })
+            }
+        });
+    }
+}

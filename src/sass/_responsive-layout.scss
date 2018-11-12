@@ -12,6 +12,13 @@
 //first major breakpoint that coincides with restruction of dom
 @media (max-width: 1150px) {
 
+    .header__hamburger-container {
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .header__menu {
         display: none;
     }
@@ -24,13 +31,7 @@
         flex-grow: 1;
     }
 
-    .header__hamburger-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        align-self: center;
-    }
+    
 
     .content__details-container {
         display: none;

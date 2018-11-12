@@ -57,37 +57,7 @@
         margin-right: 0;
     }
 
-    &__hamburger-container{
-        display: none;
-        width: 2rem;
-        height: 15px;
-        cursor: pointer;
-
-        &:hover .header__hamburger-line--top {
-            transform: rotate(45deg);
-            top: 50%;
-            position: absolute;
-        }
-
-        &:hover .header__hamburger-line--middle {
-            opacity: 0;
-        }
-
-        &:hover .header__hamburger-line--bottom {
-            transform: rotate(-45deg);
-            bottom: 50%;
-            position: absolute;
-        }
-
-    }
-
-    &__hamburger-line {
-        width: 100%;
-        height: 1px;
-        background-color: #000;
-        transition: .3s;
-    }
-
+    
 
 
 

@@ -3,6 +3,7 @@
     height: 100vh;
     // background-color: red;
     position: relative;
+    z-index: 100002;
 
     &__content-container {
         transform: translate(-50%, -50%);
