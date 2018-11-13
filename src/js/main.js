@@ -16,16 +16,19 @@ let wa = document.querySelector('#AU-WA');
 
 let currentCity = 0;
 let currentLandmark = 1;
+//whether transition is active or not.
+let animationActive = false;
 
 const nextTransition = () => {
-
+    animationActive = true;
     // 3 landmarks per city
     if (currentLandmark < 3) {
 
         //Current Landmark at the zero value should only be handled by transitioning city
         if (currentLandmark === 0)
             currentLandmark = 1;
-           
+        
+        setTimeout(function() { animationActive = false; }, 1200); //transition Landmark is a 1second animation.
         transitionLandmark(currentCity, currentLandmark);
         currentLandmark++;
     } 
@@ -37,6 +40,7 @@ const nextTransition = () => {
         } else {
             currentCity = 0;
         }
+        setTimeout(function() { animationActive = false; }, 1700); //transition City is a 1.5second animation
         transitionCity(currentCity, currentLandmark);
 
     }
@@ -122,8 +126,6 @@ const transitionLandmark = (cityIndex, landmarkIndex) => {
 }
 
 const transitionCity = (cityIndex, landmarkIndex) => {
-    //random int for top right bot left
-    let direction = Math.floor((Math.random() * 4) + 1);
 
     let city_title = document.querySelector(".content__cityheading");
     let state_title = document.querySelector(".content__stateheading");
@@ -256,6 +258,49 @@ const update_location_details = () => {
 
 window.onload = function() {
 
+    const transition_city_forward = () => {
+        //if no animation lock
+        if (!animationActive) {
+            //if can move forward
+            if (currentCity < locations.length - 1) {
+    
+                //update tracking variables
+                currentCity++;
+                currentLandmark = 0;
+                //stop animation loop
+                clearInterval(animation_loop);
+                //run transition
+                transitionCity(currentCity, currentLandmark);
+                //restart animation loop
+                animation_loop = setInterval(nextTransition, 5000);
+            }
+        }
+    }
+    const transition_city_backward = () => {
+         //if no animation lock
+         if (!animationActive) {
+    
+            //if can move back
+            if (currentCity > 0) {
+    
+                //update tracking variables
+                currentCity--;
+                currentLandmark = 0;
+                //stop animation loop
+                clearInterval(animation_loop);
+                //run transition
+                transitionCity(currentCity, currentLandmark);
+                //restart animation loop
+                animation_loop = setInterval(nextTransition, 5000);
+            }
+        }
+    }
+
+    let prev_button = document.querySelector(".content__previous-button");
+    let next_button = document.querySelector(".content__next-button");
+    prev_button.addEventListener("click", transition_city_backward);
+    next_button.addEventListener("click", transition_city_forward);
+
     //in milliseconds, avoids flashing load screen
     let pageLoadedTime = Date.now() - startTime;
     
@@ -363,29 +408,9 @@ function restructure_dom()  {
         }
     }
 }
-// turn back on for production
-const website_boot = () => {
 
-    restructure_dom();
-
-
-    setInterval(nextTransition, 5000);
-
-    // let load_screen_div = document.querySelector(".loadscreen");
-
-    // Velocity(load_screen_div, {opacity: 0}, {
-    //     duration: 2000,
-    //     complete: function() {
-    //         document.body.removeChild(load_screen_div);
-    //         setInterval(nextTransition, 5000);
-    //     }
-    // });
-
-}
 
 function side_menu_handler() {
-
-
 
     let side_menu = document.querySelector(".content__side-menu");
     let info_container = document.querySelector(".content__info-container"); 
@@ -446,4 +471,27 @@ function toggle_mobile_menu() {
             }
         });
     }
+}
+
+
+
+
+
+
+let animation_loop;
+
+// turn back on for production
+const website_boot = () => {
+    restructure_dom();
+    animation_loop = setInterval(nextTransition, 5000);
+   
+    // let load_screen_div = document.querySelector(".loadscreen");
+
+    // Velocity(load_screen_div, {opacity: 0}, {
+    //     duration: 2000,
+    //     complete: function() {
+    //         document.body.removeChild(load_screen_div);
+    //         setInterval(nextTransition, 5000);
+    //     }
+    // });
 }
