@@ -440,7 +440,7 @@ function toggle_mobile_menu() {
                 Velocity(mobile_menu, {opacity: 0}, {
                     duration: 300,
                     complete: function(){
-                        mobile_menu.style.zIndex = 0;
+                        mobile_menu.style.zIndex = -1;
                     }
                 })
             }
