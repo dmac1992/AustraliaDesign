@@ -189,12 +189,16 @@ const transitionCity = (cityIndex, landmarkIndex) => {
         }
     })
 
-    //Animate STate Decoration
-    Velocity(state_decoration, {width: "0%"},{
-        duration: 250,
-        delay: 200,
-        loop: 1
-    });
+
+    Velocity(state_decoration, {width: "0%"}, {
+        duration: 300,
+        complete: function() {
+            Velocity(state_decoration, {width: "30%"}, {
+                delay: 300,
+                duration: 300
+            })
+        }
+    })
 
     //Animate State Svg 
     Velocity(current_state_svg, {fill: ["#999999", "#339900"]}, {

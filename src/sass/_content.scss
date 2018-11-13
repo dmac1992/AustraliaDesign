@@ -160,6 +160,7 @@ $panel-height: 85vh;
         position: absolute;
         background-image: url("../img/flinders.jpg");
         background-repeat: no-repeat;
+        background-size: cover;
     }
 
     &__landmark-image--new {
