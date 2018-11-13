@@ -2,7 +2,6 @@ import "../sass/main.scss";
 import { locations } from './locations_struct';
 require('velocity-animate');
 
-
 let startTime = Date.now();
 
 //capture states
@@ -65,7 +64,6 @@ const transitionLandmark = (cityIndex, landmarkIndex) => {
 
     //create dummy element to ascertain width
     let real_image_title_container = document.querySelector(".content__image-title");
-    let current_image_title_width = real_image_title_container.offsetWidth;
     let landmark_title_span = real_image_title_container.firstChild;
     let cloned_title = real_image_title_container.cloneNode(true);
 
@@ -239,21 +237,6 @@ const transitionCity = (cityIndex, landmarkIndex) => {
 
         }
     })
-}
-
-
-//change values 
-const update_location_details = () => {
-    //snapshot pointer to the current city for clarification
-    let current_city = locations[currentCity];
-    let current_photo = document.querySelector(".content__landmark-image")
-    current_photo.style.backgroundImage = `url('../img/${current_city.landmarks[currentLandmark].image}')`;
-    photo_title.innerHTML = current_city.landmarks[currentLandmark].name;
-    city.innerHTML = current_city.city;
-    state.innerHTML = current_city.state;
-    details_population.innerHTML = current_city.population;
-    details_elevation.innerHTML = current_city.elevation;
-    details_area.innerHTML = current_city.area;
 }
 
 window.onload = function() {
@@ -472,9 +455,6 @@ function toggle_mobile_menu() {
         });
     }
 }
-
-
-
 
 
 

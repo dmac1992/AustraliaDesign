@@ -14,3 +14,27 @@
   
 }
 
+@keyframes navigation-outline-fade-previous {
+  0% {
+    outline-offset: 0;
+    outline-color: $theme-gold;
+  }
+
+  100% {
+    outline-offset: 2rem;
+    outline-color: transparent;
+  }
+}
+
+@keyframes navigation-outline-fade-next {
+  0% {
+    outline-offset: 0;
+    outline-color: $theme-green;
+  }
+
+  100% {
+    outline-offset: 2rem;
+    outline-color: transparent;
+  }
+}
+
