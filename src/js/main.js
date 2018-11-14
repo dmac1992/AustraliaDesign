@@ -55,7 +55,7 @@ const transitionLandmark = (cityIndex, landmarkIndex) => {
     let new_landmark = document.createElement("div");
     new_landmark.className = "content__landmark-image content__landmark-image--new";
 
-    new_landmark.style.backgroundImage = `url('../img/${locations[cityIndex].landmarks[landmarkIndex].image}')`;
+    new_landmark.style.backgroundImage = `url('../australia/img/${locations[cityIndex].landmarks[landmarkIndex].image}')`;
     //append child, position to left of current image with image--new class
     let landmark_image_container = document.querySelector(".content__overflow-hidden-fix");
     landmark_image_container.appendChild(new_landmark);
@@ -142,7 +142,7 @@ const transitionCity = (cityIndex, landmarkIndex) => {
         duration: 700,
         complete: function() {
             //change background image
-            landmark_image.style.backgroundImage = `url('../img/${locations[cityIndex].landmarks[landmarkIndex].image}')`;
+            landmark_image.style.backgroundImage = `url('../australia/img/${locations[cityIndex].landmarks[landmarkIndex].image}')`;
             landmark_image_title.innerHTML = locations[cityIndex].landmarks[landmarkIndex].name;
             //snap image to under page using velocityjs forcefeeding functionality, anmimate back up to 0px (default)
             Velocity(landmark_container, {translateY: ["0px", "2000px"]}, {
@@ -241,57 +241,16 @@ const transitionCity = (cityIndex, landmarkIndex) => {
 
 window.onload = function() {
 
-    const transition_city_forward = () => {
-        //if no animation lock
-        if (!animationActive) {
-            //if can move forward
-            if (currentCity < locations.length - 1) {
-    
-                //update tracking variables
-                currentCity++;
-                currentLandmark = 0;
-                //stop animation loop
-                clearInterval(animation_loop);
-                //run transition
-                transitionCity(currentCity, currentLandmark);
-                //restart animation loop
-                animation_loop = setInterval(nextTransition, 5000);
-            }
-        }
-    }
-    const transition_city_backward = () => {
-         //if no animation lock
-         if (!animationActive) {
-    
-            //if can move back
-            if (currentCity > 0) {
-    
-                //update tracking variables
-                currentCity--;
-                currentLandmark = 0;
-                //stop animation loop
-                clearInterval(animation_loop);
-                //run transition
-                transitionCity(currentCity, currentLandmark);
-                //restart animation loop
-                animation_loop = setInterval(nextTransition, 5000);
-            }
-        }
-    }
-
-    let prev_button = document.querySelector(".content__previous-button");
-    let next_button = document.querySelector(".content__next-button");
-    prev_button.addEventListener("click", transition_city_backward);
-    next_button.addEventListener("click", transition_city_forward);
-
     //in milliseconds, avoids flashing load screen
     let pageLoadedTime = Date.now() - startTime;
     
+
     if (pageLoadedTime < 3000) {
         setTimeout(website_boot, 2000);
     } else {
         website_boot();
     }
+
 }
 
 // will need to run once on load as well i think
@@ -456,22 +415,62 @@ function toggle_mobile_menu() {
     }
 }
 
-
-
 let animation_loop;
 
 // turn back on for production
 const website_boot = () => {
     restructure_dom();
-    animation_loop = setInterval(nextTransition, 5000);
-   
-    // let load_screen_div = document.querySelector(".loadscreen");
+    let load_screen_div = document.querySelector(".loadscreen");
 
-    // Velocity(load_screen_div, {opacity: 0}, {
-    //     duration: 2000,
-    //     complete: function() {
-    //         document.body.removeChild(load_screen_div);
-    //         setInterval(nextTransition, 5000);
-    //     }
-    // });
+    Velocity(load_screen_div, {opacity: 0}, {
+        duration: 3000,
+        easing: "ease-out",
+        complete: function() {
+            document.body.removeChild(load_screen_div);
+            animation_loop = setInterval(nextTransition, 8000);
+        }
+    });
 }
+
+const transition_city_forward = () => {
+    //if no animation lock
+    if (!animationActive) {
+        //if can move forward
+        if (currentCity < locations.length - 1) {
+
+            //update tracking variables
+            currentCity++;
+            currentLandmark = 0;
+            //stop animation loop
+            clearInterval(animation_loop);
+            //run transition
+            transitionCity(currentCity, currentLandmark);
+            //restart animation loop
+            animation_loop = setInterval(nextTransition, 5000);
+        }
+    }
+}
+const transition_city_backward = () => {
+     //if no animation lock
+     if (!animationActive) {
+
+        //if can move back
+        if (currentCity > 0) {
+
+            //update tracking variables
+            currentCity--;
+            currentLandmark = 0;
+            //stop animation loop
+            clearInterval(animation_loop);
+            //run transition
+            transitionCity(currentCity, currentLandmark);
+            //restart animation loop
+            animation_loop = setInterval(nextTransition, 5000);
+        }
+    }
+}
+
+let prev_button = document.querySelector(".content__previous-button");
+let next_button = document.querySelector(".content__next-button");
+prev_button.addEventListener("click", transition_city_backward);
+next_button.addEventListener("click", transition_city_forward);
