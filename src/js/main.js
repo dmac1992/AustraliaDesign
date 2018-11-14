@@ -422,7 +422,7 @@ const website_boot = () => {
     restructure_dom();
     let load_screen_div = document.querySelector(".loadscreen");
 
-    Velocity(load_screen_div, {opacity: 0}, {
+    Velocity(load_screen_div, {opacity: [0, 1]}, {
         duration: 3000,
         easing: "ease-out",
         complete: function() {

@@ -1,8 +1,10 @@
 .loadscreen {
     width: 100vw;
     height: 100vh;
-    // background-color: red;
-    position: relative;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100002;
 
     &__content-container {
