@@ -1,3 +1,12 @@
+import flindersImage from '../img/flinders.jpg';
+import fedsquareImage from '../img/fedsquare.jpg';
+import yarraImage from '../img/yarra.jpg';
+
+import harbourBridge from '../img/harbourbridge.jpg';
+import bondi from '../img/bondi.jpg';
+import operaHouse from '../img/operahouse.jpg';
+
+
 export const locations = [
     {
         "city": "Melbourne",
@@ -7,15 +16,15 @@ export const locations = [
         "area": "9,992.5 km&sup2",
         "landmarks": [
             {
-                "image": "flinders.jpg",
+                "image": flindersImage,
                 "name": "flinders"
             },
             {
-                "image": "fedsquare.jpg",
+                "image": fedsquareImage,
                 "name": "federation square"
             },
             {
-                "image": "yarra.jpg",
+                "image": yarraImage,
                 "name": "yarra river"
             }
         ]
@@ -28,15 +37,15 @@ export const locations = [
        "area": "12,368 km&sup2",
        "landmarks": [
            {
-               "image": "harbourbridge.jpg",
+               "image": harbourBridge,
                "name": "harbour bridge"
            },
            {
-               "image": "bondi.jpg",
+               "image": bondi,
                "name": "bondi beach"
            },
            {
-               "image": "operahouse.jpg",
+               "image": operaHouse,
                "name": "opera house"
            }
        ]

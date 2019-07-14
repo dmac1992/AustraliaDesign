@@ -8,6 +8,10 @@
     "build": "webpack",
     "build:prod": "webpack -p"
   },
+  "engines": {
+    "node": "10.16.0"
+  },
+  "root": "dist/",
   "keywords": [],
   "author": "",
   "license": "ISC",

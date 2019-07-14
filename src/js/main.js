@@ -55,7 +55,7 @@ const transitionLandmark = (cityIndex, landmarkIndex) => {
     let new_landmark = document.createElement("div");
     new_landmark.className = "content__landmark-image content__landmark-image--new";
 
-    new_landmark.style.backgroundImage = `url('../img/${locations[cityIndex].landmarks[landmarkIndex].image}')`;
+    new_landmark.style.backgroundImage = `url('${locations[cityIndex].landmarks[landmarkIndex].image}')`;
     //append child, position to left of current image with image--new class
     let landmark_image_container = document.querySelector(".content__overflow-hidden-fix");
     landmark_image_container.appendChild(new_landmark);
@@ -142,7 +142,7 @@ const transitionCity = (cityIndex, landmarkIndex) => {
         duration: 700,
         complete: function() {
             //change background image
-            landmark_image.style.backgroundImage = `url('../img/${locations[cityIndex].landmarks[landmarkIndex].image}')`;
+            landmark_image.style.backgroundImage = `url('${locations[cityIndex].landmarks[landmarkIndex].image}')`;
             landmark_image_title.innerHTML = locations[cityIndex].landmarks[landmarkIndex].name;
             //snap image to under page using velocityjs forcefeeding functionality, anmimate back up to 0px (default)
             Velocity(landmark_container, {translateY: ["0px", "2000px"]}, {
